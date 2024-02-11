@@ -4,6 +4,7 @@ import { ProductsModule } from './products/products.module';
 import { CustomersModule } from './customers/customers.module';
 import { OrdersModule } from './orders/orders.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 
 
@@ -14,7 +15,9 @@ import { DashboardModule } from './dashboard/dashboard.module';
     ProductsModule,
     CustomersModule,
     OrdersModule,
-    DashboardModule
+    DashboardModule,
+    RouterLink,
+    RouterOutlet
   ]
 })
 export class ComponentsModule { }
