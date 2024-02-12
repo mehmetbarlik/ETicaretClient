@@ -4,7 +4,7 @@ import { LayoutComponent } from './layout.component';
 import { ComponentsModule } from './components/components.module';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterLink, RouterModule } from '@angular/router';
-
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -15,7 +15,8 @@ import { RouterLink, RouterModule } from '@angular/router';
     CommonModule,
     ComponentsModule,
     RouterModule,
-    RouterLink
+    RouterLink,
+    MatSidenavModule
   ],
   exports : [
     LayoutComponent
