@@ -16,12 +16,12 @@ import {
   coerceBooleanProperty,
   coerceNumberProperty,
   hasModifierKey
-} from "./chunk-PDQXKDDO.js";
+} from "./chunk-XUURU47W.js";
 import {
   CommonModule,
   NgTemplateOutlet,
   getDOM
-} from "./chunk-5AOTS6RU.js";
+} from "./chunk-AG6LYJV2.js";
 import {
   ANIMATION_MODULE_TYPE,
   ChangeDetectionStrategy,
@@ -51,8 +51,6 @@ import {
   Version,
   ViewChild,
   ViewEncapsulation$1,
-  __spreadProps,
-  __spreadValues,
   booleanAttribute,
   forkJoin,
   forwardRef,
@@ -96,7 +94,11 @@ import {
   ɵɵtemplate,
   ɵɵtemplateRefExtractor,
   ɵɵviewQuery
-} from "./chunk-YQUTDYQD.js";
+} from "./chunk-QL2CHVCD.js";
+import {
+  __spreadProps,
+  __spreadValues
+} from "./chunk-WKYGNSYM.js";
 
 // node_modules/@angular/material/fesm2022/divider.mjs
 var _MatDivider = class _MatDivider {
