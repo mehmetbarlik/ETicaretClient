@@ -4,8 +4,6 @@ import { LayoutModule } from './layout/layout.module';
 import { ComponentsModule } from './components/components.module';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
-
-
 @NgModule({
   declarations: [],
   imports: [
@@ -13,10 +11,12 @@ import { RouterLink, RouterOutlet } from '@angular/router';
     LayoutModule,
     ComponentsModule,
     RouterLink,
-    RouterOutlet
+    RouterOutlet,
   ],
   exports : [
-    LayoutModule
+    LayoutModule,
+    
   ]
 })
-export class AdminModule { }
+export class AdminModule { 
+}
