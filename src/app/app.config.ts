@@ -7,5 +7,6 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideToastr } from 'ngx-toastr';
 declare var $ : any;
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideClientHydration(), provideAnimationsAsync(), provideToastr()]
+  providers: [provideRouter(routes), provideClientHydration(), provideAnimationsAsync(), provideToastr()
+    ]
 };

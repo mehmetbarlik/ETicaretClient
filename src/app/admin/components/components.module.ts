@@ -5,6 +5,7 @@ import { CustomersModule } from './customers/customers.module';
 import { OrdersModule } from './orders/orders.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -17,7 +18,9 @@ import { RouterLink, RouterOutlet } from '@angular/router';
     OrdersModule,
     DashboardModule,
     RouterLink,
-    RouterOutlet
-  ]
+    RouterOutlet,
+    HttpClientModule
+  ],
+  providers: [{provide: "baseUrl", useValue: "https://localhost:44362/api", multi: true}]
 })
 export class ComponentsModule { }
