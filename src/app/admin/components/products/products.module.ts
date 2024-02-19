@@ -3,8 +3,11 @@ import { CommonModule } from '@angular/common';
 import { ProductsComponent } from './products.component';
 import { RouterLink, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { ListComponent } from './list/list.component';
+import { CreateComponent } from './create/create.component';
+import { MatInputModule } from '@angular/material/input'
+import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,13 @@ import { HttpClientModule } from '@angular/common/http';
       path : "", component : ProductsComponent
     }]),
     RouterLink,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatFormFieldModule,
+    MatLabel,
+    MatInputModule,
+    ListComponent,
+    CreateComponent
   ]
 })
 export class ProductsModule { }
