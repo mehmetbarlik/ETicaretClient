@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,6 +23,8 @@ export class CreateComponent extends BaseComponent implements OnInit {
     ngOnInit(): void {
   }
 
+  @Output() createdProduct: EventEmitter<Create_Product> = new EventEmitter();
+
   create(name: HTMLInputElement, stock: HTMLInputElement, price: HTMLInputElement) {
     this.showSpinner(SpinnerType.BallAtom);
     const create_product: Create_Product = new Create_Product();
@@ -32,12 +34,20 @@ export class CreateComponent extends BaseComponent implements OnInit {
 
     this.productService.create(create_product, () => {
       this.hideSpinner(SpinnerType.BallAtom);
-      this.alertify.message("Ürün başarıyla eklendi.", {
+      this.alertify.message("Ürün başarıyla eklenmiştir.", {
         dismissOthers: true,
         messageType: MessageType.Success,
         position: Position.TopRight
       });
+      this.createdProduct.emit(create_product);
+    }, errorMessage => {
+      this.alertify.message(errorMessage,
+        {
+          dismissOthers: true,
+          messageType: MessageType.Error,
+          position: Position.TopRight
+        });
     });
   }
-
 }
+

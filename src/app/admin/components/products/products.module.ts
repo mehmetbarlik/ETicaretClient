@@ -8,7 +8,8 @@ import { ListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
 import { MatInputModule } from '@angular/material/input'
 import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
-
+import { MatTableModule } from '@angular/material/table'
+import { MatPaginatorModule } from '@angular/material/paginator';
 @NgModule({
   declarations: [
     ProductsComponent
@@ -25,7 +26,9 @@ import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
     MatLabel,
     MatInputModule,
     ListComponent,
-    CreateComponent
+    CreateComponent,
+    MatTableModule,
+    MatPaginatorModule
   ]
 })
 export class ProductsModule { }
