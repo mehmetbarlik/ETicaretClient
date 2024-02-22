@@ -6,10 +6,12 @@ import { BaseComponent, SpinnerType } from '../../../../base/base.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AlertifyService, MessageType, Position } from '../../../../services/admin/alertify.service';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { DeleteDirective } from '../../../../directives/admin/delete.directive';
 
+declare var $: any
 @Component({
   selector: 'app-list',
-  imports: [MatTableModule, MatPaginatorModule],
+  imports: [MatTableModule, MatPaginatorModule, DeleteDirective],
   standalone: true,
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
@@ -18,7 +20,7 @@ export class ListComponent extends BaseComponent implements OnInit {
   constructor(spinner: NgxSpinnerService, private productService: ProductService, private alertify : AlertifyService)
   { super(spinner) }
 
-  displayedColumns: string[] = ['name', 'stock', 'price', 'createdDate', 'updatedDate'];
+  displayedColumns: string[] = ['name', 'stock', 'price', 'createdDate', 'updatedDate', 'edit', 'delete'];
   dataSource: MatTableDataSource<List_Product> = null;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -32,6 +34,12 @@ export class ListComponent extends BaseComponent implements OnInit {
     this.dataSource = new MatTableDataSource<List_Product>(allProducts.products);
     this.paginator.length = allProducts.totalCount;
   }
+
+  //delete(id, event) {
+  //  alert(id)
+  //  const img: HTMLImageElement = event.srcElement;
+  //  $(img.parentElement.parentElement).fadeOut(2000);
+  //}
 
   async pageChanged() {
 
